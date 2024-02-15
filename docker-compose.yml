@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  omd-movie:
+    image: ${DOCKER_REGISTRY-}omdmovie
+    build:
+      context: .
+      dockerfile: OMD-Movie/Dockerfile
