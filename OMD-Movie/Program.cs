@@ -13,7 +13,9 @@ namespace OMD_Movie
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddHttpClient();
-            builder.Services.AddCors();
+            builder.Services.AddCors(policyBuilder =>
+             policyBuilder.AddDefaultPolicy(policy =>
+             policy.WithOrigins("*").AllowAnyHeader().AllowAnyHeader()));
 
             var app = builder.Build();
 
