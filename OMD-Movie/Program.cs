@@ -13,6 +13,7 @@ namespace OMD_Movie
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddHttpClient();
+            builder.Services.AddCors();
 
             var app = builder.Build();
 
@@ -21,7 +22,8 @@ namespace OMD_Movie
             //{
                 app.UseSwagger();
                 app.UseSwaggerUI();
-           // }
+            // }
+            app.UseCors();
 
             app.UseAuthorization();
 
